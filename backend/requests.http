@@ -28,11 +28,11 @@ GET http://localhost:5000/api/me
 
 ### Me with token
 GET http://localhost:5000/api/me
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhZTIyNGYyNWE1YzgxZTUyYjQ1MGJmYiIsImlhdCI6MTc5MzIwNjIxNCwiZXhwIjoxNzkzODExMDE0fQ.IAG5otD8jaVkArkPZ6ymYFBz1XeO0N0ZFznDKd5vLsk
+Authorization: Bearer YOUR_TOKEN
 ### Add task
 POST http://localhost:5000/api/tasks
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhZTIyNGYyNWE1YzgxZTUyYjQ1MGJmYiIsImlhdCI6MTc5MzIwNjIxNCwiZXhwIjoxNzkzODExMDE0fQ.IAG5otD8jaVkArkPZ6ymYFBz1XeO0N0ZFznDKd5vLsk
+Authorization: Bearer YOUR_TOKEN
 
 {
   "title": "Finish maths homework"
@@ -40,12 +40,12 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhZTIyNGYyN
 
 ### List tasks
 GET http://localhost:5000/api/tasks
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhZTIyNGYyNWE1YzgxZTUyYjQ1MGJmYiIsImlhdCI6MTc5MzIwNjIxNCwiZXhwIjoxNzkzODExMDE0fQ.IAG5otD8jaVkArkPZ6ymYFBz1XeO0N0ZFznDKd5vLsk
+Authorization: Bearer YOUR_TOKEN
 
 ### Mark done
 PATCH http://localhost:5000/api/tasks/6ae22a53f6eeed3b51c40122
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhZTIyNGYyNWE1YzgxZTUyYjQ1MGJmYiIsImlhdCI6MTc5MzIwNjIxNCwiZXhwIjoxNzkzODExMDE0fQ.IAG5otD8jaVkArkPZ6ymYFBz1XeO0N0ZFznDKd5vLsk
+Authorization: Bearer YOUR_TOKEN
 
 {
   "done": true
@@ -53,14 +53,14 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhZTIyNGYyN
 
 ### Delete task
 DELETE http://localhost:5000/api/tasks/6ae22a53f6eeed3b51c40122
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhZTIyNGYyNWE1YzgxZTUyYjQ1MGJmYiIsImlhdCI6MTc5MzIwNjIxNCwiZXhwIjoxNzkzODExMDE0fQ.IAG5otD8jaVkArkPZ6ymYFBz1XeO0N0ZFznDKd5vLsk
+Authorization: Bearer YOUR_TOKEN
 ### Unknown route
 GET http://localhost:5000/api/nothing
 
 ### Bad task id
 PATCH http://localhost:5000/api/tasks/123
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhZTIyNGYyNWE1YzgxZTUyYjQ1MGJmYiIsImlhdCI6MTc5MzIwNjIxNCwiZXhwIjoxNzkzODExMDE0fQ.IAG5otD8jaVkArkPZ6ymYFBz1XeO0N0ZFznDKd5vLsk
+Authorization: Bearer YOUR_TOKEN
 
 {
   "done": true
@@ -69,7 +69,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhZTIyNGYyN
 ### Empty title
 POST http://localhost:5000/api/tasks
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhZTIyNGYyNWE1YzgxZTUyYjQ1MGJmYiIsImlhdCI6MTc5MzIwNjIxNCwiZXhwIjoxNzkzODExMDE0fQ.IAG5otD8jaVkArkPZ6ymYFBz1XeO0N0ZFznDKd5vLsk
+Authorization: Bearer YOUR_TOKEN
 
 {
   "title": ""
@@ -78,7 +78,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhZTIyNGYyN
 ### Broken JSON
 POST http://localhost:5000/api/tasks
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhZTIyNGYyNWE1YzgxZTUyYjQ1MGJmYiIsImlhdCI6MTc5MzIwNjIxNCwiZXhwIjoxNzkzODExMDE0fQ.IAG5otD8jaVkArkPZ6ymYFBz1XeO0N0ZFznDKd5vLsk
+Authorization: Bearer YOUR_TOKEN
 
 {
   "title": "oops"
