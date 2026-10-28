@@ -1,0 +1,84 @@
+### Test the echo route
+POST http://localhost:5000/api/echo
+Content-Type: application/json
+
+{
+  "name": "Rishitha"
+}
+### Register
+POST http://localhost:5000/api/auth/register
+Content-Type: application/json
+
+{
+  "name": "Rishitha",
+  "email": "rishitha@test.com",
+  "password": "test1234"
+}
+
+### Login
+POST http://localhost:5000/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "rishitha@test.com",
+  "password": "test1234"
+}
+### Me without token
+GET http://localhost:5000/api/me
+
+### Me with token
+GET http://localhost:5000/api/me
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhZTIyNGYyNWE1YzgxZTUyYjQ1MGJmYiIsImlhdCI6MTc5MzIwNjIxNCwiZXhwIjoxNzkzODExMDE0fQ.IAG5otD8jaVkArkPZ6ymYFBz1XeO0N0ZFznDKd5vLsk
+### Add task
+POST http://localhost:5000/api/tasks
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhZTIyNGYyNWE1YzgxZTUyYjQ1MGJmYiIsImlhdCI6MTc5MzIwNjIxNCwiZXhwIjoxNzkzODExMDE0fQ.IAG5otD8jaVkArkPZ6ymYFBz1XeO0N0ZFznDKd5vLsk
+
+{
+  "title": "Finish maths homework"
+}
+
+### List tasks
+GET http://localhost:5000/api/tasks
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhZTIyNGYyNWE1YzgxZTUyYjQ1MGJmYiIsImlhdCI6MTc5MzIwNjIxNCwiZXhwIjoxNzkzODExMDE0fQ.IAG5otD8jaVkArkPZ6ymYFBz1XeO0N0ZFznDKd5vLsk
+
+### Mark done
+PATCH http://localhost:5000/api/tasks/6ae22a53f6eeed3b51c40122
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhZTIyNGYyNWE1YzgxZTUyYjQ1MGJmYiIsImlhdCI6MTc5MzIwNjIxNCwiZXhwIjoxNzkzODExMDE0fQ.IAG5otD8jaVkArkPZ6ymYFBz1XeO0N0ZFznDKd5vLsk
+
+{
+  "done": true
+}
+
+### Delete task
+DELETE http://localhost:5000/api/tasks/6ae22a53f6eeed3b51c40122
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhZTIyNGYyNWE1YzgxZTUyYjQ1MGJmYiIsImlhdCI6MTc5MzIwNjIxNCwiZXhwIjoxNzkzODExMDE0fQ.IAG5otD8jaVkArkPZ6ymYFBz1XeO0N0ZFznDKd5vLsk
+### Unknown route
+GET http://localhost:5000/api/nothing
+
+### Bad task id
+PATCH http://localhost:5000/api/tasks/123
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhZTIyNGYyNWE1YzgxZTUyYjQ1MGJmYiIsImlhdCI6MTc5MzIwNjIxNCwiZXhwIjoxNzkzODExMDE0fQ.IAG5otD8jaVkArkPZ6ymYFBz1XeO0N0ZFznDKd5vLsk
+
+{
+  "done": true
+}
+
+### Empty title
+POST http://localhost:5000/api/tasks
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhZTIyNGYyNWE1YzgxZTUyYjQ1MGJmYiIsImlhdCI6MTc5MzIwNjIxNCwiZXhwIjoxNzkzODExMDE0fQ.IAG5otD8jaVkArkPZ6ymYFBz1XeO0N0ZFznDKd5vLsk
+
+{
+  "title": ""
+}
+
+### Broken JSON
+POST http://localhost:5000/api/tasks
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhZTIyNGYyNWE1YzgxZTUyYjQ1MGJmYiIsImlhdCI6MTc5MzIwNjIxNCwiZXhwIjoxNzkzODExMDE0fQ.IAG5otD8jaVkArkPZ6ymYFBz1XeO0N0ZFznDKd5vLsk
+
+{
+  "title": "oops"

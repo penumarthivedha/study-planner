@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+:root {
+  --ink: #3a3347;
+  --muted: #857d94;
+  --line: #f1e4e4;
+  --accent: #f0775a;
+  --accent-dark: #dc6446;
+  --done: #4fb38a;
+  --sun: #ffc65c;
+}
+
+body {
+  color: var(--ink);
+  font-family: "Segoe UI", system-ui, sans-serif;
+}
+
+.app-bg {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #ffe6cf 0%, #ffd9e3 50%, #d6ebff 100%);
+  background-attachment: fixed;
+}
+
+.heading {
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.88);
+  border-radius: 18px;
+  box-shadow: 0 8px 24px rgba(200, 120, 120, 0.15);
+}
+
+.field {
+  width: 100%;
+  background: #fff;
+  border: 1.5px solid var(--line);
+  border-radius: 12px;
+  padding: 0.7rem 0.9rem;
+  color: var(--ink);
+}
+.field::placeholder {
+  color: #b5adc0;
+}
+.field:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(240, 119, 90, 0.18);
+}
+
+.btn {
+  background: var(--accent);
+  color: #fff;
+  font-weight: 700;
+  border-radius: 12px;
+  padding: 0.7rem 1.2rem;
+  transition: background 0.15s, transform 0.15s;
+}
+.btn:hover {
+  background: var(--accent-dark);
+  transform: translateY(-1px);
+}
+.btn:disabled {
+  opacity: 0.5;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.fade-up {
+  animation: fadeUp 0.35s ease-out;
+}
