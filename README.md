@@ -1,6 +1,11 @@
 # Study Planner
+A study planner app which helps users to manage their own tasks and organise them by register & log in to their individual accounts.
 
-A  study planner app which helps users to manage their own tasks and organise them by  register & log in to their individual accounts. 
+## Live demo
+- App: https://study-planner-iota-roan.vercel.app
+- API: https://study-planner-api-4xck.onrender.com
+
+Note: the backend is on a free plan and sleeps when idle, so the first request can take 30 to 60 seconds. Please wait and refresh once.
 
 ## Features
 - Register and login with hashed passwords (bcrypt) and JWT tokens
